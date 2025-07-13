@@ -31,5 +31,49 @@ This project demonstrates how to interface a **4x4 matrix keypad** with the **AT
 *Note: Internal pull-ups can be enabled on PORTK if no external resistors are used.*
 
 ## 📂 File Structure
+4x4-keypad-scanning/
+├── main.c # Main code with keypad logic
+├── README.md # Project documentation
+└── Makefile (optional)
 
 
+## 🧠 How It Works
+
+- The microcontroller scans one row at a time by driving it HIGH.
+- Then it checks which column inputs are HIGH, indicating which key was pressed.
+- A debounce delay is added to avoid false triggers.
+- Detected key is mapped using a 2D character array and output via `PORTA`.
+
+## 🚀 Getting Started
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/nagarajgollar18/4x4-keypad-scanning.git
+   cd 4x4-keypad-scanning
+
+Open main.c in your IDE (e.g., Atmel Studio, PlatformIO, AVR-GCC).
+
+Connect your hardware as described above.
+
+Compile and flash the code to the ATmega2560 board.
+
+🧪 Output
+When a key is pressed, its ASCII value is sent to PORTA.
+
+You can connect LEDs or check PORTA via logic analyzer or serial monitor (if extended).
+
+🧱 Future Improvements
+Add USART serial output to display key via terminal
+
+Add support for keypad interrupts
+
+Port to other microcontrollers like STM32 or ESP32
+
+Add LCD display support
+
+📜 License
+This project is open-source and free to use under the MIT License.
+
+🙋‍♂️ Author
+Nagaraj Gollar
+Embedded Systems Enthusiast
